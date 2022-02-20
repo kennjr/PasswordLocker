@@ -23,3 +23,13 @@ def save_user(new_user):
     """
     new_user.save_user()
 
+
+def del_user(user):
+    """
+    Delete the user that's been passed as a param
+    :param user:
+    :return:
+    """
+    user.delete_user()
+
+
