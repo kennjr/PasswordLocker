@@ -1,15 +1,23 @@
 # This is a sample Python script.
 import login2
 import locker
+import random, string
 
 
 def login_interaction():
     while True:
         login_str = str(input("Login? [y/N] "))
         if login_str.lower() == "y":
-            name = str(input("Name: "))
-            password = str(input("Password: "))
-
+            print("Name .........")
+            name = str(input())
+            code = generate_password()
+            if code is not None:
+                password = code
+                print("Password .........")
+                print(password)
+            else:
+                print("Password .........")
+                password = str(input())
             login_attempt(name, password)
         elif login_str.lower() == "n":
             break
@@ -88,7 +96,9 @@ def generate_password():
         print("Would you like a sys. generated password? [y/N] ")
         gen_code = str(input()).lower()
         if gen_code == "y":
-            code = "passcode"
+            length = 10
+            letters = string.ascii_lowercase
+            code = ''.join(random.choice(letters) for i in range(length))
             break
         elif gen_code == "n":
             break
