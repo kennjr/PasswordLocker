@@ -1,5 +1,3 @@
-
-
 class User:
     users_list = []
 
@@ -8,12 +6,13 @@ class User:
         self.password = password
         self.datetime = datetime
 
-    def new_user(self):
+    def save_user(self):
         """
         Add a new user to the users_list
         :return:
         """
         User.users_list.append(self)
+        print("User saved ", self.name)
 
     # The del fun. will delete the contact from all the instances of the class that's why it's a class method
     @classmethod
