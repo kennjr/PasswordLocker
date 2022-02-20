@@ -1,4 +1,4 @@
-from credentials import Credentials
+from credentials import Credentialz
 
 
 def create_credential(application, username, password, owner):
@@ -10,7 +10,7 @@ def create_credential(application, username, password, owner):
     :param password:
     :return:
     """
-    new_credentials = Credentials(application, username, password, owner)
+    new_credentials = Credentialz(application, username, password, owner)
     return new_credentials
 
 
@@ -20,7 +20,7 @@ def get_all_credentials(owner):
     :param owner:
     :return:
     """
-    return Credentials.owners_credentials(owner)
+    return Credentialz.owners_credentials(owner)
 
 
 def add_credentials(credential):
@@ -32,11 +32,22 @@ def add_credentials(credential):
     return credential.new_credentials()
 
 
-def get_specific_credentials(name, owner):
+def get_specific_credentials(app_name, owner):
     """
     Return a credentials obj with the specified name
-    :param name:
+    :param app_name:
     :param owner
     :return:
     """
-    return Credentials.find_credentials_by_name(name, owner)
+    return Credentialz.find_credentials_by_app_name(app_name, owner)
+
+
+def delete_credential(credential: Credentialz):
+    """
+    Deletes the credential that's been passed from the array
+    :param credential:
+    :return:
+    """
+    return credential.delete_credential_from_instance()
+    # Credentialz.delete_credentials()
+    # return credential.delete_credentials()
