@@ -60,6 +60,28 @@ class MyTestCase(unittest.TestCase):
         user_exists = User2.does_user_exist("userone")
         self.assertTrue(user_exists)
 
+    def test_display_users(self):
+        """
+        Get all the users in the list and return them
+        :return:
+        """
+        self.new_user.save_user()
+        self.assertEqual(User2.display_users(), User2.users_list)
+
+    def test_find_user_by_name(self):
+        """
+        Search for a user in the user_list then check if the user exists
+        :return:
+        """
+        self.new_user.save_user()
+        returned_obj = User2.find_user_by_name("useron")
+        user_obj = False
+        if returned_obj is not None:
+            user_obj = True
+        self.assertTrue(user_obj)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
