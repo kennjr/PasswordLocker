@@ -115,7 +115,7 @@ def locker_interaction():
             if credential is not None:
                 print(f"App/Website => {credential.application}, username => {credential.username}, password => {credential.password}")
             else:
-                print(f"No app/website with named {app_name} was found.")
+                print(f"No app/website named {app_name} was found.")
         elif action_str == "del-cred":
             print("Name of application/website whose credentials should be deleted ............")
             app_name = str(input())
