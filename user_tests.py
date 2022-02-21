@@ -48,5 +48,18 @@ class MyTestCase(unittest.TestCase):
         new_user_2.delete_user_from_instance()
         self.assertEqual(len(User2.users_list), initial_length - 1)
 
+    def test_check_user_existence(self):
+        """
+        Check whether a user exists in the list if he was added
+        :return:
+        """
+        self.new_user.save_user()
+        # We're creating another instance of the contact class below
+        test_contact = User2("Testuser", "123", "7123456")  # new contact
+        test_contact.save_user()
+        user_exists = User2.does_user_exist("userone")
+        self.assertTrue(user_exists)
+
+
 if __name__ == '__main__':
     unittest.main()
