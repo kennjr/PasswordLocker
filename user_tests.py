@@ -80,7 +80,15 @@ class MyTestCase(unittest.TestCase):
             user_obj = True
         self.assertTrue(user_obj)
 
-
+    def test_update_and_get_current_user(self):
+        """
+        Get the user who's currently logged in
+        :return:
+        """
+        self.new_user.save_user()
+        User2.update_current_user(self.new_user)
+        current_user = User2.get_current_user()
+        self.assertEqual(self.new_user, current_user)
 
 
 if __name__ == '__main__':
