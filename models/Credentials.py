@@ -1,8 +1,8 @@
 
 
-class Credentials:
+class Credential:
 
-    credentials_list = []
+    # credentials_list = []
 
     def __init__(self, application, username, password, owner):
         self.application = application
@@ -15,5 +15,5 @@ class Credentials:
         Add a new credential to the credentials_list
         :return:
         """
-        Credentials.credentials_list.append(self)
+        # Credential.credentials_list.append(self)
 

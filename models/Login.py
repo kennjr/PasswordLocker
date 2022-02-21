@@ -1,3 +1,5 @@
+
+from user import User
 from user import User
 import datetime
 
@@ -33,3 +35,10 @@ def del_user(user):
     user.delete_user()
 
 
+def find_user(name):
+    """
+    Search for user using the search str passed
+    :param name:
+    :return:
+    """
+    return User.does_user_exist(name)

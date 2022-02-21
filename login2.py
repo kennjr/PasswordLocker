@@ -39,4 +39,30 @@ def find_user(name):
     :param name:
     :return:
     """
+    return User2.find_user_by_name(name)
+
+
+def check_for_existing_user(name):
+    """
+    Check if there's a user that goes by the name passed, return a boolean
+    :param name:
+    :return:
+    """
     return User2.does_user_exist(name)
+
+
+def update_current_user_val(user2):
+    """
+    Change the value of the current_user property to the one in the brackets
+    :param user2:
+    :return:
+    """
+    return User2.update_current_user(user2)
+
+
+def get_current_user_val():
+    """
+    Returns the value of the current_user property form the class
+    :return:
+    """
+    return User2.get_current_user()
