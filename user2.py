@@ -1,5 +1,6 @@
 class User2:
     users_list = []
+    current_user = None
 
     def __init__(self, name, password, datetime):
         self.name = name
@@ -11,8 +12,7 @@ class User2:
         Add a new user to the users_list
         :return:
         """
-        User.users_list.append(self)
-        print("User saved ", self.name)
+        User2.users_list.append(self)
 
     # The del fun. will delete the contact from all the instances of the class that's why it's a class method
     @classmethod
@@ -21,7 +21,14 @@ class User2:
         Delete a user (that was passed as a param) from the users list
         :return:
         """
-        User.users_list.remove(cls)
+        User2.users_list.remove(cls)
+
+    def delete_user_from_instance(self):
+        """
+        Delete the user from the instance
+        :return:
+        """
+        User2.users_list.remove(self)
 
     # CLs indicates that the method is part of the class i.e Contact
     @classmethod
@@ -54,4 +61,20 @@ class User2:
             if user.name == name:
                 return user
 
+    @classmethod
+    def get_current_user(cls):
+        """
+        returns the value of the property current_user
+        :return:
+        """
+        return cls.current_user
+
+    @classmethod
+    def update_current_user(cls, user):
+        """
+        updates the value of the current_user property
+        :param user:
+        :return:
+        """
+        cls.current_user = user
 
